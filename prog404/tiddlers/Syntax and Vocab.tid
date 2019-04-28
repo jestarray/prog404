@@ -1,0 +1,16 @@
+created: 20190222231756160
+modified: 20190222232052420
+title: Syntax and Vocab
+type: text/vnd.tiddlywiki
+
+```scheme
+; variables
+
+(define Variable Expression)
+; functions
+
+(define (FunctionName Variable ... Variable)
+  Expression)
+
+
+```

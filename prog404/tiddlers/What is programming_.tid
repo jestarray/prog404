@@ -1,0 +1,47 @@
+created: 20190202163300562
+modified: 20190329001330102
+tags: 1
+title: What is programming?
+type: text/vnd.tiddlywiki
+
+<center>
+[img height=400 [/mnt/shared/programming404/prog404/tiddlers/images/programming_orc.jpg]]
+</center>
+Programming is orchestrating tiny pieces of logic, like how music is orchestrating tiny pieces of sound.
+
+<<<
+A, B, C, D, E, F, G (not including sharps, etc)
+<<<
+
+So, in the language of music, it boils down to communication with 7 letters of the alphabet(A-G) representing various scales of tone, and [[it's pretty amazing, the amount of patterns we can organize,  with just |https://youtu.be/rNsgHMklBW0]] [[7|https://youtu.be/YIqbdnaPcT8?t=54]].
+
+<<<
+strings: "abcdef1234$%W$"
+
+booleans: true, false
+
+numbers: 1342, -999, 42
+
+(excluding objects, arrays, etc because they really just contain these)
+<<<
+
+In contrast to programming, it boils down to working with only 3 types of data, and it's very puzzling as to just how these can make up entire applications. With music, it's not too hard to reason out and translate: do, rei, mi, fah, soe, to an instrument or notes, we can grasp auditory feedback and hear how everything combines and fits together, but with programming, you're telling me `strings, numbers, and booleans` make up entire games and applications? How do I even..? The answer is, one tiny step at a time. Initially a little cryptic but you'll adapt quickly.
+
+[[Close your eyes, pause and think|https://youtu.be/rNsgHMklBW0]], fundamentally what must happen in music and programs? What is it doing?
+
+<$button popup="$:/SamplePopupState0">Answer</$button>
+
+<$reveal type="popup" state="$:/SamplePopupState0">
+<div class="tc-drop-down">
+
+It's changing. If a song only uses 1 note, it'll get annoying and no one would want to play it, same for programs.
+
+Managing and orchestrating change is where things get difficult.
+
+</div>
+</$reveal>
+
+Next: [[Learn Programming in under 20 minutes]]
+
+Credits(so I don't get sued):
+https://commons.wikimedia.org/wiki/File:Thomas_Ad%C3%A8s_conducts_the_National_Youth_Orchestra_of_Great_Britain_at_Snape_Maltings_Concert_Hall.jpg#globalusage

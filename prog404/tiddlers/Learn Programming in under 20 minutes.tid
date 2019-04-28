@@ -1,0 +1,168 @@
+created: 20190208173256496
+modified: 20190422222247442
+tags: 1
+title: Learn Programming in under 20 minutes
+type: text/vnd.tiddlywiki
+
+In DrRacket, the top half is the definitions area where we will write our code.
+
+The bottom half is the interactions area, that is what our code produces.
+
+To run code, hit Run or CTRL+R
+
+As I said before, it really boils down 3 types of data:
+
+```scheme
+; this is a comment for notes n stuff, anything after the semicolon is ignored and not ran
+
+; Data types
+; numbers: 
+-1345 42 543 0.2423
+
+; strings: just display symbols
+"why don't ants get sick? because they have little antybodies"
+
+"dahaha jsadfoisaj 2134)(*$)1"
+
+; booleans:
+#true
+#false
+
+; but these are just sitting there doing nothing, and programming is all about shifting and changing data, so lets introduce some operations to change them:
+
+; operations on numbers:
+
+(+ 1 3) ;4
+(- 3 5) ;-2
+(* 5 5) ;25
+(/ 2 2) ;1
+(+ 9 4 1 34 5894 32)
+(+ 0 pi)
+
+; nest and combine operations
+; If you remember from school, parenthesis have higher order presidency. They're the VIPs and they have to be ran first. All parenthesis collapse to strings, booleans, numbers.
+
+(+ (* 3 4) (* 2 2))
+(+ 12     4) 
+16 ;final form
+
+; deep nesting , order of operations, left to right, inside out.
+(+ (* 43 2) (/ 100 (+ (+ 1 1) 2)))
+
+```
+<$button popup="$:/SamplePopupState0">Answer</$button>
+
+<$reveal type="popup" state="$:/SamplePopupState0">
+<div class="tc-drop-down">
+
+```scheme
+(+ 86       (/ 100 (+  2        2)))
+(+ 86       (/ 100 4))
+(+ 86       25)
+111
+```
+</div>
+</$reveal>
+
+```scheme
+; Challenge 1:
+; A sword costs 50 gold and the player wants 2 swords. The town also charges a 50%(0.50) tax rate.
+
+;The formula for to determine what the player has to pay is:
+; (quantity * price) + (quantity * price * tax)
+; translate this into racket
+```
+<$button popup="$:/SamplePopupState1">Answer</$button>
+
+<$reveal type="popup" state="$:/SamplePopupState1">
+<div class="tc-drop-down">
+
+```scheme
+(+ (2 * 50) (2 * 50 * 0.50))
+```
+</div>
+</$reveal>
+
+```scheme
+; but what if we had to do this a multitude of times? and what if the sword price changes?
+(+ (* 2 50) (* 2 50 0.50))
+(+ (* 2 50) (* 2 50 0.50))
+(+ (* 2 50) (* 2 50 0.50))
+(+ (* 2 50) (* 2 50 0.50))
+(+ (* 2 50) (* 2 50 0.50))
+
+; we'd have to change 50 in so many places and typing out the formula out is time consuming, along with not adaptable to change.
+; this is where variables and substitution come in.
+(define SWORD 50) ;here we set a variable to hold the price of the sword
+
+(+ (* 2 SWORD) (* 2 SWORD 0.50)); and now we can just plug it. We can change the price anytime without having to replace 50 everywhere
+
+; but we can do better with functions!
+(define (total-price quantity price tax) ;the name of the function, and temporary variables that are fed into the body
+  (+ (* quantity price) (* quantity price tax))) ;the body of the function wraps and composes operations
+
+
+(total-price 2 SWORD 0.50) ; now we can just do a simple call to total-price. Much better!
+(total-price 4 SWORD 0.20) ; the difference now is that we can easily change and calculate different inputs
+
+; Notice that when we created our functions, we did a few things
+; 1. we created and encapsulated a set of operations and gave it meaning via the name.
+; 2. we made it easier to write and change our code. 
+; POP QUIZ! WHAT DOES MULTIPLICATION DO? Well it's just a short hand for addition.
+; We could write 5 + 5 + 5 + 5 + 5 but that takes too much time, space and energy when we can just do 5 * 5.
+; in a way, we've created our own operator and added it to our arsenal of operators (+ - * /). We can name it $ if we wanted to
+
+; operations on strings
+(define NAME "jest")
+(string-append "jest" "er") ; -> jester
+(string-length NAME) ; -> 4
+                 
+           ;0123
+(substring "jest" 0 3) ; -> jes , zero based indexing
+
+(string-append "1" "1") ; 11, it just mashes the characters together
+; (string-append 9 " ate " 6) ; but if we try to run string-append on numbers, it will crash
+(string-append (number->string 9) " ate " (number->string 6)) ; thus we have to convert numbers to strings
+
+
+; operations on booleans
+(and #true #true) ; -> true , as long as both sides are true
+(or #false #true) ; -> true , as long as there is only 1 true
+(not #true) ; -> false , flips it to the opposite
+(> 100 4) ; -> true 
+(string=? "twins" "twins") ; -> true
+(>= 5 5) ;-> true, greater OR equal
+
+(if (< 1 3) "hellyeah" "hellno") ; -> "hellyes" , because 1 is less than 3.
+(if #false "HELLYEAH" "hellno") ; -> "hellno"
+
+; NOW LET'S ORCHESTRATE IT ALL TOGETHER
+
+(define NEMESIS "people who like coconut")
+
+(define (shopping name quantity price tax)
+  (if (string=? name NEMESIS) "BANNED" (string-append "Thank you, your total is: " (number->string (total-price quantity price tax)))))
+
+(shopping "people who like coconut" 2 30 0.20)
+(shopping "jest" 2 SWORD 0.50)
+```
+
+And this is pretty much all of programming. It's about making a ton of your own functions that transform data, and then composing them together, and the limit is your imagination. We skipped over a few things like objects, arrays, and iteration but we'll cover them later on. Just about every programming language has these concepts.
+Here's the total-price function in [[C|https://repl.it/repls/PossibleWarlikeOpengl]], [[Javascript|https://repl.it/repls/FrozenTrainedMonitor]] and [[Python|https://repl.it/repls/WaryNumbScientist]]
+
+Think of values like notes in music. They connect, so don't think of them in isolation, but rather what you can do to them and how to connect them.
+
+You may run into some crashes and errors:
+
+Calling a function with too many arguments.
+
+Calling a function with the wrong type.
+
+Calling a function with the wrong name.
+
+Too many parenthesis
+
+
+Programming is very sharply precision oriented, and we'll go over more about this later.
+
+Tip:  Since all ( ) collapse into numbers, strings, and booleans, always think of what you can do to them next

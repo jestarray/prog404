@@ -1,0 +1,121 @@
+created: 20190422220330103
+modified: 20190427143709936
+tags: 1
+title: Graphics and Libraries
+type: text/vnd.tiddlywiki
+
+Racket can also work with images. For Racket to work with images, it needs to pull in a library.
+
+```scheme
+(require 2htdp/image)
+```
+
+A library is a set of code that someone else wrote. `require`-ing it means we're going to pull/import it into our program.
+The `(require)` gives us access to everything they've wrote like (rectangle ) (circle )
+
+```scheme
+(rectangle 40 40 "solid" "black") ;creates a black rectangle
+```
+
+So you're probably wondering, how do I know what I have at my disposal? how do I know how to use things?
+
+You can try to take a lucky guess! If the library provides me with a way to draw rectangles and circles, maybe there's a triangle?
+
+```scheme
+(triangle)
+```
+It gives us the error : `triangle: expects 3 arguments, but found none`. Okay, so the triangle function exists at least but I'm missing the 3 options it takes in to create a triangle.
+
+You can right-click the `triangle` word and hit `Search in Helpdesk` which will open up the documentation on how to use it. Note: Always select `2htdp` because we are using the 2nd edition of HTDP book.
+[[We can see that triangle |https://docs.racket-lang.org/teachpack/2htdpimage.html#%28def._%28%28lib._2htdp%2Fimage..rkt%29._triangle%29%29]] takes in `(triangle side-length mode color)`, and the examples show us that
+
+```scheme
+(triangle 40 "solid" "red") ; side-length is a number, mode is a string and color is a string.
+```
+We can also see that we have tons of other functions to use, and this brings me to the 1st rule of programming club. Do not try to memorize everything. Things are just a lookup away and there's too much to remember. You'll remember things the more you use them anyways.
+
+Now lets say you want to make a house, and get the triangle on top of the square.
+
+Well, more often than not, you're not the first person in the entire world to want to do draw a triangle on top of a square,
+which brings me to the 2nd rule of programming club: Do not assume you're alone. Google your problem whenever stuck or search through the documentation. Chances are someone else has had your problem.
+
+But in our case, i just happen to know [[overlay/xy|https://docs.racket-lang.org/teachpack/2htdpimage.html?q=overlay%2Fxy#%28def._%28%28lib._2htdp%2Fimage..rkt%29._overlay%2Fxy%29%29]]
+gives us this ability.
+
+```scheme
+; we put the rectangle and triangle in a variable called base since we're going to be re-using them a lot.
+(define base (rectangle 40 40 "solid" "black"))
+(define roof (triangle 40 "solid" "red"))
+
+(overlay/xy roof 0 0 base)
+(overlay/xy roof 0 10 base)
+(overlay/xy roof 0 20 base)
+(overlay/xy roof 0 30 base)
+(overlay/xy roof 0 40 base)
+```
+
+Okay, good. So you may have wondered, huh... the triangle could be a missle? We just made the triangle go up, but very slowly...
+How do I animate the the triangle moving up smoothly?
+
+This is where `(animate )` comes in. To use it we'll need to pull in `(require 2htdp/universe)`
+
+What animate takes in, is a function and it will run that function 28 times a second, handing it a `number` that's increasing.
+
+```scheme
+; the draw function is ran/refreshed 28 times per second with a number
+(define (draw n)
+  (text (string-append (number->string n) " is the number ") 24 "blue")) ; we take that number and convert it to a string, then we use (text) to create an IMAGE of the text.
+
+(animate draw)
+```
+We can use that number to move the triangle. I've made it so that `animate` calls fire.
+
+```scheme
+(require 2htdp/image)
+(require 2htdp/universe)
+
+(define base (rectangle 40 40 "solid" "black"))
+
+(define roof (triangle 40 "solid" "red"))
+
+(overlay/xy roof 0 40 base)
+
+(define (draw n)
+  (text (string-append (number->string n) " is the number ") 24 "blue"))
+
+(define (fire n)
+  (overlay (overlay/xy roof 0 n base) ; take that number and make it change the y
+           (rectangle 300 300 "solid" "white")))
+
+(animate fire) ; run the fire function 28 times passing in a number that increases
+```
+
+''BUT wait!'' Somethings wrong... there's something you should know about the coordinate system when it comes to working with graphics.
+
+[img[/mnt/shared/programming404/prog404/tiddlers/images/traditional_vs_computer.png]]
+
+Traditionally the image on the left. move positive 2 on the y axis means going on UP, but in computer graphics, that's moving down because the origin(that is where everything starts moving) starts at the top left corner. So movements on Y is flipped. (huge hint for the upcoming exercise).
+
+Knowing that, it turns out we aren't moving the roof up, we are moving the box down. To fix this, we can change the `(overlay/xy roof 0 n base)` to `(overlay/xy roof 0 (- 0 n) base)` to flip the number to negative so we can move up, but now the base is moving up?
+
+It turns out that I misinterpreted what `(overlay/xy)` does. The description of it states: `Constructs an image by overlaying i1 on top of i2. The images are initially lined up on their upper-left corners and then i2 is shifted to the right by x pixels to and down by y pixels.` So taking a moment to process this, `i2` is the 3rd parameter, and it is shifted by x & y. To fix this, we want the roof to be the one that's actually moving so we swap the two images and wallah!
+
+```scheme
+(define (fire n)
+  (overlay (overlay/xy base 0 (- 0 n) roof) ; flipped roof and base, and now roof is moving up
+           (rectangle 300 300 "solid" "white")))
+```
+
+This brings me to the 3rd rule of programming club which is that you often don't get things right the first time. You will accidentally misinterpret things and make mistakes. This topic is explored in [[more detail later|Is programming hard?]].
+
+So to sum everything up, before, we got it visually working, but it was logically broken since we were moving the box down.
+Now ''visually and logically'', the roof is moving up, while the base doesn't move at all (even it looks like it because overlay combines images but we can fix this later).
+
+Anyways, don't worry if you don't get what I just did, the takeaways are 
+
+* do not try to memorize everything
+* do not try to program alone, google and ask for help
+* the coordinate system starts at the top left corner
+* you aren't going to get everything right the first time
+
+Now to test your understanding, Do [[Challenge Set 1]]

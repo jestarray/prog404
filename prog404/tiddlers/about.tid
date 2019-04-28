@@ -1,0 +1,79 @@
+created: 20190131041403330
+modified: 20190420015114594
+tags: 
+title: about
+type: text/vnd.tiddlywiki
+
+programming404 (aka programming not found) is an effort to make the definitive guide on teaching and learning programming __deliberately__, and help you [[obtain a very particular set of skills, skills that you will need in your very long career|https://youtu.be/KgmO32IdwuE]].
+
+The resources I'll be drawing upon are:
+
+*[[HTDP|https://www.htdp.org/2018-01-06/Book/]] and it's [[video series|https://www.edx.org/course/how-code-simple-data-ubcx-htc1x]]
+* https://www.coursera.org/learn/programming-languages
+*SCIP & Functional Programming (planned)
+*NAND2Tetris (planned)
+* Networking (https://www.goodreads.com/book/show/505564.The_TCP_IP_Guide)
+
+Feel free to discuss and contribute here: https://github.com/jestarray/programming404
+
+FAQ:
+
+''Q: Who is this for?''
+
+<center>[img[/mnt/shared/programming404/tiddlers/images/confident_programmer.jpg]]</center>
+
+If you're a complete beginner or you're stuck in the hand holding honey moon phase of not being able to do anything without tutorials, well, you've came to the right place
+<center>
+[img[/mnt/shared/programming404/tiddlers/images/welcome.gif]]
+</center>
+
+Maybe you've played around a little with a programming language and some frameworks but don't really feel like you know what you're doing.
+
+We'll be covering building games, making use of recursion, building a mini database, and so much more, all from scratch with your own reasoning.
+
+By the end of this series, you're gonna like the way you code, I guarantee it.
+
+''Q: How will this differ from all the other intro to programming courses I've tried?'''
+
+Firstly, the How To Design Programs(HTDP) curriculum, the source I primarily draw from, has been thoroughly [[evaluated, taught, and tested a multitude of times|https://www.youtube.com/playlist?list=PLitFP8FdScfFjBC74_gz9iCBxUCoqlhjk]] dating back to 2001, so it really tailored for you to learn and understand not only how to program but how to program well, incorporating best practices from the disciplines of functional programming with data and test driven development.
+
+And secondly, I want to maximize social interactive play. I want you to think of programming as a puzzle game. Every video or so should explain everything you need to know to solve levels of puzzles that escalate in difficulty, and there will be incremental hints if they get too difficult or if you're stuck for too long. Solving these puzzles are pieces to solving bigger ones, and before you know, you'll be building projects. After you get the gist of things, I encourage you guys to write your own puzzles to challenge and troll your peers. Ultimately I want this to be a fun game central approach to programming but we'll see where this goes.
+
+''Q: Why not python or some other popular language?''
+
+A: You can learn any programming language in under a day but how to reason and use them is a whole different ball game, and the entire point of this course is to teach reasoning and design
+
+That being said, Why Racket?
+
+* Minimal Setup & Cross Platform IDE, no millions of buttons you don't care about, no tool chains, no making sure compiler works - The only thing you really care about in an IDE is the debugger and syntax highlighting.
+* No boilerplate - oop class bodies, access modifiers, static typing*, too many language mechanics that get in the way of the essence of problems solving.
+*Instant feedback loops - instant reload times to fix mistakes, hence the choice of this language and not systems level langauges
+* Functional style
+
+If you're still worried because Racket isn't a popular language and it doesn't sound like its been used in the enterprise, surprise! A few endorsements:
+
+[[John Carmack|https://en.wikipedia.org/wiki/John_Carmack]], arguably [[one of the best programmers|https://youtu.be/OHgET0En8Fw]] in the world ~~and the sexiest~~, and I say this because he built and launched rockets, and has shipped over 10 games, from 2D to "[[pseudo 3D"|https://youtu.be/zb6Eo1D6VW8]] (when computers did not have enough power to run 3D games) to 3D, now working on advancing VR with Oculus, tweeted: 
+
+<<<
+[[I feel really good about Racket / DrRacket as a path to good programming.|https://twitter.com/ID_AA_Carmack/status/635842976988680192]]
+<<<
+He also uses it in some of his [[VR work.|https://youtu.be/ydyztGZnbNs]] and also to [[teach his son|https://www.itworld.com/article/2978142/development/why-john-carmack-thinks-racket-is-aces-for-beginning-programmers.html]]. I highly recommend watching a [[few|https://youtu.be/1PhArSujR_A]] of his talks to see for yourself, he's very humble, despite having massive achievements. I couldn't find a single good reason to dislike the guy other than that he isn't [[single|/mnt/shared/programming404/tiddlers/images/trynot2cry.jpg]], but that's enough about me fangirling about Carmack. ~~ Join the Club~~
+
+And I'm glad he thinks so because I agree. Before I heard he endorsed it, I had a lot of AHA moments from Racket, and I thought it was just me because I often feel like I blow AHA moments out of the water.
+
+Game studio [[NaughtyDog|https://en.wikipedia.org/wiki/Naughty_Dog]], famous for games like Uncharted and The Last Of Us, also [[used racket|http://cufp.org/2011/functional-mzscheme-dsls-game-development.html]].
+
+''Q: Do I need a strong math background?''
+
+A: Nope, maybe very few algebra concepts, but its just plugging variables and substitution really. If there are some mathy problems, formulas and explanations will be provided.
+
+Anyways let's install and configure a few defaults:
+
+*Show Line Numbers
+* Automatic Closing Parens
+
+The parenthesis and prefix notation may be very off putting compared to other languages but bare with me here. You'll easily be able to language hop after this.
+
+Other interesting resources:
+
+https://www.thinkful.com/blog/why-learning-to-code-is-so-damn-hard/

@@ -1,0 +1,19 @@
+created: 20190422190600328
+modified: 20190428160139353
+tags: 1
+title: Challenge Set 1
+type: text/vnd.tiddlywiki
+
+Challenge file: [[here|https://drive.google.com/open?id=1BPTD8dtRKP0DQDJ0htSm-JRUeTCHDUmo]]
+
+Challenge solution: [[here|https://drive.google.com/open?id=1nAdKDMMHmWs40ajhOmNH2YpVdTgDPjlL]]
+
+!Perspectives:
+
+Why learn programming?
+
+To leverage the sheer power of computers. Computers are fast and do billions of operations per second. 
+
+Lets break down what we did. We leveraged the horse power of the computer to draw a pair of glasses falling down ''28 times per second''. A human can't even do 1 per second, let alone every few seconds. To put that in perspective, games run at 60 fps, meaning every time 1% of a second passes, it's redrawing your characters, drawing the world, calculating collisions, playing sounds, the list goes on, all of this, in a hairs worth of a second. You tell any human to draw and do math and that speed and they'd commit seppuku.
+
+Chances are if you're new to programming, it was a bit of a struggle. That's okay, this is new material for your brain, remember the 3rd rule: don't expect to get everything right the first time. The pain of not getting things working is crucial because you're factoring out what NOT to do. Anyways, this brings me to my next topic, which is: [[Is programming hard?]]

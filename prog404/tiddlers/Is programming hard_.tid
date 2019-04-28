@@ -1,0 +1,78 @@
+created: 20190308172338676
+modified: 20190427152747709
+tags: 1
+title: Is programming hard?
+type: text/vnd.tiddlywiki
+
+The act of programming is communicating to the computer what you want it to do, but there's one huge problem. This sort of communication is ''extremely'' precision oriented and assumes no context, and this is something that takes getting used to because we as humans communicate assuming context.
+
+Were you ever annoyingly witty?
+
+<<<
+Mum: It's 10' o clock, go to bed~
+
+Son: Well, in New York or Mars, it's not 10, you didn't specify the timezone.
+
+Mum: Oh no! Don't you dare get smart with me, you know what I meant! NOW!
+
+Son: Okay okay, yeesh.
+
+(tick tick tick)30 minutes later.
+
+Mum: Why are you not in bed?!
+
+Son: I went to bed, and then I decided to get up.
+
+Mum: >:(   ... Go to bed and ''stay'' in bed
+<<<
+
+This is the reality of programming. It's like the computer is this slippery sly witty kid that keeps trying to come up with ways to not do what it's told but in a weird way, it is doing what it's told. As much as we all wanna look like genius hackers that know everything, [[typing out 500 lines of code per second|https://youtu.be/HluANRwPyNo]] doing everything flawlessly, the actual reality of programming is a constant waterfall of error messages, headaches, and tears, where you're communicating "please, just behave the way I want you to" and the computer trolls you with things you didn't specify and account for, and it's impossible to account for everything.
+
+<<<
+
+Another 30 minutes later.
+
+Son: (drags video games to bed), what? I am in bed.
+
+Mum: ''deep breath'' Go to bed, and stay in bed, and go to ''sleep'', and ''stay'' asleep.
+
+Son: sleep is not defined.
+
+<<<
+
+Our monkey brains are not meant to account for every little tiny single detail of precision oriented communication. A small typo? Crash. Missing a closing parenthesis? Crash. Uppercase vs lowercase? Crash. Calling a function with the wrong type of data? Crash. These aren't too bad though because it's an obvious fix but what you have to watch out for is the biggest lie in computing, which is: "it works".
+
+People and organizations you'd think are professional and smart, suffer from the same flaws:
+
+*  [[NASA's Mars Climate Orbiter|https://youtu.be/urcQAKKAAl0]] Forgot to check metric vs imperial. $200 million down the drain. (Pay me $200 million and I'll convert it for you.)
+
+I'd go far as to argue that they didn't forget, they were just lazy.  BUT, we can't 100% blame em.
+
+A recurring theme I've noticed is that communication of any form, whether its to something or someone, gets more lazier and loose as you get to know them.
+
+Math:
+
+```javascript
+3 + 3 + 3 + 3
+3 * 4
+ab //multiplication becomes the default operator in algebra at some point
+Σ //sigma eventually
+// all these perform addition in some way or form, but notice how as we progress, we invent ways to communicate more lazily writing less.
+```
+
+When you meet a friend for the first time, you kind of hold back a little, but later on, you know you can get away with such and such jokes and eventually you open up to more looser and lazier communication.
+
+When you're going on a date with your crush for the first time, you're initially a little extra.
+
+<<<
+"ahem" Excuse me, I need to use the restroom (when you need to burp or fart)
+<<<
+
+Lots of make up.
+
+You're rigorously proper and formal but then at some later point, you just let go and accept the person and lose the make up, and burp n fart whenever, like you do with family.
+
+But this is your first date with programming, so we're going to be "rigorously formal", before we get lazy. We're [[going to slow down|https://youtu.be/izGwDsrQ1eQ]], and get to know the problem, take it out to dinner, go for long walks on the beach, ''we're going to write down and describe everything'', before we dive into coding everything out, and this may seem tediously annoying at first for easy problems, but when we get into recursion and larger programs, it'll make more sense.
+
+So yes, programming is hard because we're clumsy as humans. The precision and orchestration of writing minuscule pieces of logic that converge at one point is very prone to breakage by unintentional faulty human error. 
+You'll fail hard, you'll be left puzzled and confused, you'll be frustrated and stuck, and these will never truly go away, but with practice it can happen less. Next section: [[Designing Functions]]

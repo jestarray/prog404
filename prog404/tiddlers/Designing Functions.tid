@@ -1,0 +1,24 @@
+created: 20190427152444893
+modified: 20190427153341534
+title: Designing Functions
+type: text/vnd.tiddlywiki
+
+So I'm going to go over how to design, that is, how to reason about creating functions but I'm going to assume you already know how to do it, and in the next video or so will explain the rationality behind it all.
+
+todo:
+htdf with strings
+htdf with images , make an edge case
+htdf with numbers
+htdf with booleans
+
+it's not a strict waterfall process, there's room to be flexible. As you write code, some other part of your brain is thinking in the background and you may get an "aha", I also need to do (x), so you go back and revise.
+your tests may be wrong
+
+people should be able to use your code without going in and processing how its done, just like how you don't need to know electric engineering to drive a car.
+
+Programming seeks to emulate and automate behaviors in the real world and you will soon see that emulating behaviors is a slippery slope because the world in its essence is wiggly and messy. You know when humans have been around when you see things straight lines and organized.
+
+tips:
+run your code as often as you can.
+
+Do not assume the computer has any context. Assume you are wrong and that you are telling it exactly what it is doing, even though if it is misaligned with what you want it to do.

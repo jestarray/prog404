@@ -1,0 +1,55 @@
+created: 20190422232737991
+modified: 20190427151549947
+tags: 1
+title: The Design Recipe - HTDF Rationality
+type: text/vnd.tiddlywiki
+
+ We can't even do long division without a piece of paper because we simply cannot keep track of all the numbers. 
+
+Writing tests is like casting a net. It makes you understand the problem. Sometimes evolution of the function changes the tests. Remember, this is so that one day, when you're working at NASA and they didn't test their code, they owe you $200 million.
+
+But there's hope! The Design Recipe is the center of the course. We are not going to program by coincidence. We are going to be extremely vocal about what we do. Rubber ducky debugging.
+
+For some experienced programmers (pushes glasses in):
+Code should be self documenting, comments can get outdated, why are we commenting everything if the types are not checked?
+While I kind of agree, since we're in a dynamically typed language, types expressed in the form of comments do help.
+
+-Top down planning , bottoms up intuition, don't code by coincidence.
+(flash lenny face)
+
+We write tests to illuminate that the function is preforming as intended AND, to factor out that the problem isn't coming from here. When you're writing more larger programs, you're going to have tons of functions and if something goes wrong, then you'd have to trace where the problem is coming from in this large haystack. 
+
+
+[[If you do not utilize comments, you will force the person who is reading your code, to re-create your intuition|https://youtu.be/XTl7Jn_kmio]] . If code is self documenting in the first place, why do we have documentation? Not to say it shouldn't be self documenting.
+
+-Other programmers should be able to use your code without diving deep into the implementation.
+
+Programming on autopilot.
+
+Helps blank page syndrome, because out there in the wild, there is no healthcare
+
+Make a problem that forces user to divide by 0; show the value of check-expect by creating gotchas
+
+-It may seem like you thinking process is constrained by the design recipe but i think it's is explicitly exposing the thought processes behind thinking. Writing tests checks your blind spots.
+
+What are training wheels for? They're to prevent you from falling on a bike.  The Design Recipe may seem like a training wheels approach to programming because its very verbose and explicit but it's not because one thing that is absolutely certain, is that you will fall. 
+
+save this for HTDD: 
+Information as data and vice versa
+; Information -> booleans, strings, numbers, images
+
+; booleans, strings, numbers, images (data) -> Information
+
+For those who have had some experience with programming, I was rolling my eyes when NAND2tetris which really puts some of this into action by building a computer from scratch (all the way down to creating a virtual CPU from logic gates)
+
+I leave you a quote:
+
+<<<
+“We shall do a much better programming job, provided that we approach the task with a full appreciation of its tremendous difficulty, provided that we respect the intrinsic limitations of the human mind and approach the task as Very Humble Programmers.”
+
+- The Humble Programmer by Edsger W. Dijkstra
+<<<
+
+There are more bugs in the human brain than there are in your program, and since your brain is writing the program, if you're not careful you could be writing bugs. Sometimes I'm dread tired but I still write code and forget to account for things and etc.
+
+Programmers are bad at doing the time scale integration of something they know is a bad thing. This is a global flag, its a bad thing but it's just a little bad thing.
